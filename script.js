@@ -21,11 +21,18 @@ function renderProducts() {
   });
 }
 
+
 // Render cart list
 function renderCart() {}
 
 // Add item to cart
-function addToCart(productId) {}
+const addcardbtn = document.querySelector(".add-to-cart-btn")
+addcardbtn.addEventListener("click",addToCart(e.getAttribute("data-id")))
+function addToCart(productId) {
+	for (let product of products) {
+		sessionStorage.setItem(productId, JSON.stringify(product));
+	}
+}
 
 // Remove item from cart
 function removeFromCart(productId) {}
